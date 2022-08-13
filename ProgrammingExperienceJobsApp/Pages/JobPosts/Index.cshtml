@@ -26,14 +26,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.JobPosts)
+            @foreach (var jobPost in Model.JobPosts)
             {
                 <tr>
-                    <td width="50%">
-                        @item.Title
-                    </td>
-                    <td width="50%">
-                        @item.Description
+                    <td>
+                        <a asp-page="View" asp-route-id="@jobPost.Id">
+                            @jobPost.Title
+                            @jobPost.Description
+                        </a>
                     </td>
                 </tr>
             }

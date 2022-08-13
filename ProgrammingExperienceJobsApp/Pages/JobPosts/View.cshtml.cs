@@ -4,27 +4,18 @@ using ProgrammingExperienceJobsApp.Models;
 using ProgrammingExperienceJobsApp.Data;
 
 namespace ProgrammingExperienceJobsApp.Pages.JobPosts;
-public class CreateModel : PageModel
+public class ViewModel : PageModel
 {
     private readonly ApplicationDbContext _db;
     [BindProperty]
     public JobPost JobPost { get; set; }
 
-    public CreateModel(ApplicationDbContext db)
+    public ViewModel(ApplicationDbContext db)
     {
         _db = db;
     }
-    public void OnGet()
+    public void OnGet(Guid id)
     {
-    }
-
-    public async Task<IActionResult> OnPost()
-    {
-        if (!ModelState.IsValid) 
-        return Page();
-        
-        await _db.JobPost.AddAsync(JobPost);
-        await _db.SaveChangesAsync();
-        return RedirectToPage("Index");
+        JobPost = _db.JobPost.Find(id);
     }
 }

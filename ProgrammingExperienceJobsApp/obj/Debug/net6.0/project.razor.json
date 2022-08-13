@@ -16318,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/Pages/JobPosts/View.cshtml",
+      "TargetPath": "Pages\\JobPosts\\View.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/Pages/JobPosts/Create.cshtml",
       "TargetPath": "Pages\\JobPosts\\Create.cshtml",
       "FileKind": "mvc"
