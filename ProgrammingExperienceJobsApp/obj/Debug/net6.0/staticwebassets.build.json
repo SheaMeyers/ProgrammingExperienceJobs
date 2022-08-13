@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NSWgg6taOozsBp4kmDYpWU8Eo/dkGxL4Sgcgo7PQjIE=",
+  "Hash": "3J+LpBHI32MCLOzijCthBn2B3eSRTm+yXHDQES9EqG8=",
   "Source": "ProgrammingExperienceJobsApp",
   "BasePath": "_content/ProgrammingExperienceJobsApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/obj/Debug/net6.0/scopedcss/projectbundle/ProgrammingExperienceJobsApp.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/wwwroot/css/bootstrap.css",
+      "SourceId": "ProgrammingExperienceJobsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/wwwroot/",
+      "BasePath": "_content/ProgrammingExperienceJobsApp",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap.css"
     },
     {
       "Identity": "/Users/shea/Projects/ProgrammingExperienceJobs/ProgrammingExperienceJobsApp/wwwroot/css/site.css",
