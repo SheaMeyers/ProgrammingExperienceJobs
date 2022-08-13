@@ -1,8 +1,8 @@
 ﻿@page
 @model ProgrammingExperienceJobsApp.Pages.JobPosts.IndexModel
 
-<div class="container p-3">
-    <div class="row pt-4">
+<div class="container">
+    <div class="row mb-3">
         <div class="col-6">
             <h2 class="text-primary">Job Posts</h2>
         </div>
@@ -13,30 +13,15 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-stripped" style="width:100%">
-        <thead>
-            <tr>
-                <th>
-                    Job Title
-                </th>
-                <th>
-                    Job Description
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var jobPost in Model.JobPosts)
-            {
-                <tr>
-                    <td>
-                        <a asp-page="View" asp-route-id="@jobPost.Id">
-                            @jobPost.Title
-                            @jobPost.Description
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    @foreach (var jobPost in Model.JobPosts)
+    {
+        <div class="card mb-3">
+            <a asp-page="View" asp-route-id="@jobPost.Id">
+                <div class="card-body">
+                    <h4 class="card-title">@jobPost.Title</h4>
+                    <p class="card-text">@jobPost.Description</p>
+                </div>
+            </a>
+        </div>
+    }
 </div>
