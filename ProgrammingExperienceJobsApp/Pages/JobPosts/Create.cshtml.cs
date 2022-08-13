@@ -20,6 +20,9 @@ public class CreateModel : PageModel
 
     public async Task<IActionResult> OnPost()
     {
+        if (!ModelState.IsValid) 
+            return Page();
+        
         await _db.JobPost.AddAsync(JobPost);
         await _db.SaveChangesAsync();
         return RedirectToPage("Index");

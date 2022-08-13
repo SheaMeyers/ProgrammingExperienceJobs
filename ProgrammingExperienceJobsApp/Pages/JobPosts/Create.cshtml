@@ -10,10 +10,12 @@
         <div class="mb-3">
             <label asp-for="JobPost.Title"></label>
             <input asp-for="JobPost.Title" class="form-control" />
+            <span asp-validation-for="JobPost.Title" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="JobPost.Description"></label>
             <input asp-for="JobPost.Description" class="form-control" />
+            <span asp-validation-for="JobPost.Description" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
     </div>
