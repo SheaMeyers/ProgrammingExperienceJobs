@@ -25,6 +25,6 @@ public class CreateModel : PageModel
         
         await _db.JobPost.AddAsync(JobPost);
         await _db.SaveChangesAsync();
-        return RedirectToPage("Index");
+        return RedirectToPage("../Index");
     }
 }

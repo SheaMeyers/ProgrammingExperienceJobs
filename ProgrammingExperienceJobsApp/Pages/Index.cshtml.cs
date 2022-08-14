@@ -1,19 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProgrammingExperienceJobsApp.Data;
+using ProgrammingExperienceJobsApp.Models;
 
-namespace ProgrammingExperienceJobsApp.Pages;
-
+namespace ProgrammingExperienceJobsApp.Pages.JobPosts;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly ApplicationDbContext _db;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IEnumerable<JobPost> JobPosts { get; set; }
+
+    public IndexModel(ApplicationDbContext db)
     {
-        _logger = logger;
+        _db = db;
     }
 
     public void OnGet()
     {
-
+        JobPosts = _db.JobPost;
     }
 }

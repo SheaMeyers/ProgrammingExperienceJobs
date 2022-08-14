@@ -1,10 +1,27 @@
 ﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+@model ProgrammingExperienceJobsApp.Pages.JobPosts.IndexModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Job Posts</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="./JobPosts/Create" class="btn btn-primary">
+                Create New Job Post
+            </a>
+        </div>
+    </div>
+
+    @foreach (var jobPost in Model.JobPosts)
+    {
+        <div class="card mb-3">
+            <a asp-page="./JobPosts/View" asp-route-id="@jobPost.Id">
+                <div class="card-body">
+                    <h4 class="card-title">@jobPost.Title</h4>
+                    <p class="card-text">@jobPost.Description</p>
+                </div>
+            </a>
+        </div>
+    }
 </div>
