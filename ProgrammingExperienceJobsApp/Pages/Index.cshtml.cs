@@ -16,6 +16,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        JobPosts = _db.JobPost;
+        JobPosts = _db.JobPost.OrderByDescending(jobPost => jobPost.CreatedDate);
     }
 }
