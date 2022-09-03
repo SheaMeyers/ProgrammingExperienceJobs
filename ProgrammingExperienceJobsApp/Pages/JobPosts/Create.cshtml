@@ -15,6 +15,22 @@
                 <input asp-for="JobPost.Description" class="form-control" />
                 <span asp-validation-for="JobPost.Description" class="text-danger"></span>
             </div>
+            <p>Contact Information</p>
+            <div class="mb-3">
+                <label>Company Name</label>
+                <input asp-for="JobPost.CompanyName" class="form-control" />
+                <span asp-validation-for="JobPost.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="JobPost.Email"></label>
+                <input asp-for="JobPost.Email" class="form-control" />
+                <span asp-validation-for="JobPost.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Phone Number</label>
+                <input asp-for="JobPost.PhoneNumber" class="form-control" />
+                <span asp-validation-for="JobPost.PhoneNumber" class="text-danger"></span>
+            </div>
             <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
         </div>
     </div>
