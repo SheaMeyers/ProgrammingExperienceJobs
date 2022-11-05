@@ -11,8 +11,9 @@ public class CreateModel : PageModel
     private readonly ApplicationDbContext _db;
     [BindProperty]
     public JobPost JobPost { get; set; }
-    public IEnumerable<Experience> Experiences { get; set; }
-    public Array languages { get; set; }
+    [BindProperty]
+    public Experience Experience { get; set; }
+    public Array languageValues { get; set; }
 
     public CreateModel(ApplicationDbContext db)
     {
@@ -20,7 +21,7 @@ public class CreateModel : PageModel
     }
     public void OnGet()
     {
-        this.languages = Enum.GetValues(typeof(Languages));
+        this.languageValues = Enum.GetValues(typeof(Languages));
     }
 
     public async Task<IActionResult> OnPost()

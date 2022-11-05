@@ -31,14 +31,21 @@
                 <input asp-for="JobPost.PhoneNumber" class="form-control" />
                 <span asp-validation-for="JobPost.PhoneNumber" class="text-danger"></span>
             </div>
+            <h3>Experience</h3>
             <div class="mb-3">
-                <label>Languages</label>
-                <select class="form-select">
-                    @foreach (var language in @Model.languages)
+                <label asp-for="Experience.Language"></label>
+                <select asp-for="Experience.Language" class="form-select">
+                    @foreach (var language in @Model.languageValues)
                     {
                         <option value=@language>@language.ToString().Replace("Sharp", "#").Replace("Plus", "+")</option>
                     }
                 </select>
+                <span asp-validation-for="Experience.Language" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Experience.Years"></label>
+                <input asp-for="Experience.Years" class="form-control" />
+                <span asp-validation-for="Experience.Years" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
         </div>
