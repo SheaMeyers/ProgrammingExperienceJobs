@@ -31,12 +31,12 @@
                 <input asp-for="JobPost.PhoneNumber" class="form-control" />
                 <span asp-validation-for="JobPost.PhoneNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label class="form-control">Languages</label>
-                <select>
+            <div class="mb-3">
+                <label>Languages</label>
+                <select class="form-select">
                     @foreach (var language in @Model.languages)
                     {
-                        <option value=@language>@language</option>
+                        <option value=@language>@language.ToString().Replace("Sharp", "#").Replace("Plus", "+")</option>
                     }
                 </select>
             </div>
