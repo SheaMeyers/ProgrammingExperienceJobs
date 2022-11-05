@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace ProgrammingExperienceJobsApp.Constants;
 
 public enum Languages {

@@ -28,8 +28,12 @@ public class CreateModel : PageModel
     {
         if (!ModelState.IsValid) 
         return Page();
+
+        JobPost.Experiences.Add(Experience);
+        Experience.JobPosts.Add(JobPost);
         
         await _db.JobPost.AddAsync(JobPost);
+        await _db.Experience.AddAsync(Experience);
         await _db.SaveChangesAsync();
         return RedirectToPage("../Index");
     }
