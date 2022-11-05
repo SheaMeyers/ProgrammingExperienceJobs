@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace ProgrammingExperienceJobsApp.Constants;
 
-public enum Language {
+public enum Languages {
     [Description("Python")]
     Python,
     [Description("C#")]
