@@ -29,11 +29,17 @@ public class CreateModel : PageModel
         if (!ModelState.IsValid) 
         return Page();
 
+        if(!_db.Experience.Any(e => e.Language == Experience.Language && e.Years == Experience.Years)){
+            // If Language and Years combination does not yet exist, add it so it can be updated later
+            await _db.Experience.AddAsync(Experience);
+            await _db.SaveChangesAsync();
+        }
+
         JobPost.Experiences.Add(Experience);
         Experience.JobPosts.Add(JobPost);
         
         await _db.JobPost.AddAsync(JobPost);
-        await _db.Experience.AddAsync(Experience);
+        _db.Experience.Update(Experience);
         await _db.SaveChangesAsync();
         return RedirectToPage("../Index");
     }
