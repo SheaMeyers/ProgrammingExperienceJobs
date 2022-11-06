@@ -13,7 +13,7 @@ public class IndexModel : PageModel
     public IEnumerable<JobPost> JobPosts { get; set; }
     [BindProperty]
     public Experience Experience { get; set; }
-    public Array languageValues { get; set; }
+    public Array languageValues = Enum.GetValues(typeof(Languages));
 
     public IndexModel(ApplicationDbContext db)
     {
@@ -22,15 +22,11 @@ public class IndexModel : PageModel
 
     public void OnPost()
     {
-        languageValues = Enum.GetValues(typeof(Languages));
-
         JobPosts = _db.JobPost.Where(jp => jp.Experiences.Contains(Experience)).OrderByDescending(jp => jp.CreatedDate);
     }
 
     public void OnGet()
     {
-        languageValues = Enum.GetValues(typeof(Languages));
-
         JobPosts = _db.JobPost;
     }
 }
