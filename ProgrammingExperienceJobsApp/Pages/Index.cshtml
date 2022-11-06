@@ -12,6 +12,26 @@
             </a>
         </div>
     </div>
+    <form method="post">
+        <div class="row mb-3">
+            <div class="mb-3">
+                <label asp-for="Experience.Language"></label>
+                <select asp-for="Experience.Language" class="form-select">
+                    @foreach (var language in @Model.languageValues)
+                    {
+                        <option value=@language>@language.ToString().Replace("Sharp", "#").Replace("Plus", "+")</option>
+                    }
+                </select>
+                <span asp-validation-for="Experience.Language" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Experience.Years"></label>
+                <input asp-for="Experience.Years" class="form-control" />
+                <span asp-validation-for="Experience.Years" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:150px;">Search</button>
+        </div>
+    </form>
 
     @foreach (var jobPost in Model.JobPosts)
     {
