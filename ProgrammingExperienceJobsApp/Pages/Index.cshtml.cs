@@ -1,4 +1,6 @@
+using System.Threading.Tasks.Dataflow;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProgrammingExperienceJobsApp.Constants;
 using ProgrammingExperienceJobsApp.Data;
 using ProgrammingExperienceJobsApp.Models;
 
@@ -16,6 +18,7 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        JobPosts = _db.JobPost.OrderByDescending(jobPost => jobPost.CreatedDate);
+        var experience = _db.Experience.First(e => e.Language == Languages.CSharp);
+        JobPosts = _db.JobPost.Where(jp => jp.Experiences.Contains(experience)).OrderByDescending(jp => jp.CreatedDate);
     }
 }
