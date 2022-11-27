@@ -28,4 +28,12 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+if (builder.Configuration.GetValue<bool>("SeedData")) {
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        SeedData.CreateData(db);
+    }
+}
+
 app.Run();
