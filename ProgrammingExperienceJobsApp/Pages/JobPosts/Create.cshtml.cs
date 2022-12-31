@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProgrammingExperienceJobsApp.Models;
 using ProgrammingExperienceJobsApp.Data;
 using ProgrammingExperienceJobsApp.Constants;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ProgrammingExperienceJobsApp.Pages.JobPosts;
 public class CreateModel : PageModel
